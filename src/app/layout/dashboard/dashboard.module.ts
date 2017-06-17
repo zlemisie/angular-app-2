@@ -5,7 +5,7 @@ import {
     NgbAlertModule
 } from '@ng-bootstrap/ng-bootstrap';
 
-
+import { TranslateModule } from '@ngx-translate/core';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import {
@@ -22,6 +22,7 @@ import { ProjectModule } from '../../shared';
         NgbAlertModule.forRoot(),
         DashboardRoutingModule,
         ProjectModule,
+        TranslateModule
     ],
     declarations: [
         DashboardComponent,

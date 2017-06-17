@@ -1,10 +1,6 @@
 import {Component, OnInit, Input, Output, EventEmitter, ViewChild} from '@angular/core';
 import { ProjectService } from './../../services/project.service';
 import { Project } from './../../services/project';
-import { Log } from './../../services/log';
-import { BaseChartDirective } from 'ng2-charts';
-
-
 
 @Component({
     providers: [ProjectService],
@@ -22,9 +18,6 @@ export class ProjectComponent implements OnInit {
     @Output() event: EventEmitter<any> = new EventEmitter();
 
     project: Project = null;
-
-    // @ViewChild(BaseChartDirective)
-    // public chart: BaseChartDirective;
 
     // Radar
     public radarChartLabels: string[] = [];
