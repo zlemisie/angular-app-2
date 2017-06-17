@@ -12,10 +12,10 @@ export class ProjectService {
 
     constructor(private http: Http) { }
 
-    getProjects(): Promise<Project[]> {
-        return this.http.get(this.projectUrl)
+    getProjectNumbers(): Promise<string[]> {
+        return this.http.get(this.projectUrl + 's')
             .toPromise()
-            .then(response => response.json().data as Project[])
+            .then(response => response.json() as string[])
             .catch(this.handleError);
     }
 

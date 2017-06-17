@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ProjectService } from './../../shared/services/project.service';
+import { Project } from './../../shared/services/project';
 
 @Component({
+    providers: [ProjectService],
     selector: 'app-dashboard',
     templateUrl: './dashboard.component.html',
     styleUrls: ['./dashboard.component.scss']
@@ -8,8 +11,9 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
     public alerts: Array<any> = [];
     public sliders: Array<any> = [];
+    public projectNumbers: Array<string>;
 
-    constructor() {
+    constructor(private projectService: ProjectService) {
         this.sliders.push({
             imagePath: 'assets/images/slider1.jpg',
             label: 'First slide label',
@@ -40,7 +44,11 @@ export class DashboardComponent implements OnInit {
                 voluptatum veritatis quod aliquam! Rerum placeat necessitatibus, vitae dolorum`,
         });
     }
-    ngOnInit() {}
+    ngOnInit() {
+        this.projectService.getProjectNumbers().then(
+            projectNumbers => this.projectNumbers = projectNumbers
+        );
+    }
 
     public closeAlert(alert: any) {
         const index: number = this.alerts.indexOf(alert);
