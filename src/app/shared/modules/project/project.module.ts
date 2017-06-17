@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StatComponent } from './stat.component';
+import { ProjectComponent } from './project.component';
 import { ChartsModule as Ng2Charts } from 'ng2-charts';
 
 @NgModule({
@@ -8,7 +8,7 @@ import { ChartsModule as Ng2Charts } from 'ng2-charts';
         CommonModule,
         Ng2Charts,
     ],
-    declarations: [StatComponent],
-    exports: [StatComponent]
+    declarations: [ProjectComponent],
+    exports: [ProjectComponent]
 })
-export class StatModule { }
+export class ProjectModule { }
